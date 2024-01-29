@@ -1,3 +1,4 @@
+package com.banjann.sudoku;
 
 public class Main {
 
