@@ -7,7 +7,7 @@ import java.util.List;
 public class Main {
 
 	private static Integer[][] matrix = {
-            {0, 3, 0, 0, 0, 0, 0, 7, 0},
+            {2, 3, 0, 0, 0, 0, 0, 7, 0},
             {0, 0, 8, 0, 0, 4, 0, 0, 0},
             {7, 6, 4, 0, 0, 0, 5, 3, 0},
             {6, 0, 0, 1, 0, 7, 2, 0, 0},
@@ -19,8 +19,12 @@ public class Main {
 			};
 
 	public static void main(String[] args) {
+		System.out.println("sudoku problem:");
+		printMatrix();
+
 		if (bruteForce()) {
-			printSolution();
+			System.out.println("solution:");
+			printMatrix();
 		} else {
 			System.out.println("no solution!");
 		}
@@ -79,7 +83,7 @@ public class Main {
 		return !row.contains(digit) && !column.contains(digit) && !submatrixAsList.contains(digit);
 	}
 
-	private static void printSolution() {
+	private static void printMatrix() {
 		for (int r = 0; r < matrix.length; r++) {
 			for (int c = 0; c < matrix[r].length; c++) {
 				System.out.print(matrix[r][c]);
